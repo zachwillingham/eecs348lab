@@ -1,0 +1,48 @@
+<!--
+Zachary Willingham
+3080805
+Lab 7
+10/26/2023
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiplication Table</title>
+</head>
+<body>
+
+<h1>Multiplication Table</h1>
+
+<form method="post" action="">
+  <label for="number">Enter a number:</label>
+  <input type="number" name="number" id="number" required>
+  <input type="submit" value="Generate Table">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $number = $_POST["number"];
+    echo "<h2>Multiplication Table for $number</h2>";
+    echo "<table border='1'>";
+    echo "<tr><th>&times;</th>";
+    
+    // Print column indexes
+    for ($i = 1; $i <= $number; $i++) {
+        echo "<th>$i</th>";
+    }
+    echo "</tr>";
+
+    // Print table rows with row indexes
+    for ($i = 1; $i <= $number; $i++) {
+        echo "<tr><th>$i</th>";
+        for ($j = 1; $j <= $number; $j++) {
+            echo "<td>" . ($i * $j) . "</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+}
+?>
+
+</body>
+</html>

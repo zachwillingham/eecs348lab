@@ -1,0 +1,40 @@
+<!--
+Zachary Willingham
+3080805
+Lab 7
+10/26/2023
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Verification</title>
+  <script>
+    function checkPasswords() {
+      var password1 = document.getElementById("password1").value;
+      var password2 = document.getElementById("password2").value;
+
+      if (password1.length < 8 || password2.length < 8) {
+        alert("Minimum 8 characters. Did you not read the instructions?");
+      } else if (password1 !== password2) {
+        alert("Sorry no match. It just wasn't meant to be.");
+      } else {
+        alert("It's a match!");
+      }
+    }
+  </script>
+</head>
+<body>
+
+<h1>Password Verification</h1>
+<h2>Minimum 8 characters</h2>
+
+<label for="password1">Enter Password:</label>
+<input type="password" id="password1" placeholder="First password"><br>
+
+<label for="password2">Re-enter Password:</label>
+<input type="password" id="password2" placeholder="Second password"><br>
+
+<button onclick="checkPasswords()">Verify Passwords</button>
+
+</body>
+</html>
